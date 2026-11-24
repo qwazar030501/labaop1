@@ -1,17 +1,24 @@
+using System;
+using System.Windows.Forms;
+using WarehouseInventory.IoC;
+using WarehouseInventory.Repositories.Interfaces;
+using WarehouseInventory.Repositories.Stubs;
+
 namespace WinFormsApp1
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var container = new SimpleContainer();
+            container.Register<IMaterialRepository, MaterialRepositoryStub>();
+            container.Register<IProductRepository, ProductRepositoryStub>();
+            container.Register<IMovementRepository, MovementRepositoryStub>();
+            container.Register<IProductMaterialRepository, ProductMaterialRepositoryStub>();
+            container.Register<IPurchaseRequestRepository, PurchaseRequestRepositoryStub>();
+            Application.Run(container.Resolve<MainForm>());
         }
     }
 }
