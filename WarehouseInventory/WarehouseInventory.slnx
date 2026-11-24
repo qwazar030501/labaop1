@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="WarehouseInventory.IoC/WarehouseInventory.IoC.csproj" />
+  <Project Path="WarehouseInventory.Models/WarehouseInventory.Models.csproj" />
+  <Project Path="WarehouseInventory.Repositories/WarehouseInventory.Repositories.csproj" />
+  <Project Path="WarehouseInventory/WarehouseInventory.csproj" />
+  <Project Path="WinFormsApp1/WinFormsApp1.csproj" />
+</Solution>
