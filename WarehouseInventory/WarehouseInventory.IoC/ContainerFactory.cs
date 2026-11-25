@@ -14,7 +14,6 @@ namespace WarehouseInventory.IoC
             container.Register<IMovementRepository, MovementRepositoryStub>();
             container.Register<IProductMaterialRepository, ProductMaterialRepositoryStub>();
             container.Register<IPurchaseRequestRepository, PurchaseRequestRepositoryStub>();
-
             return container;
         }
     }
